@@ -24,7 +24,7 @@ const pokemonList = [
   }
 ];
 // store index of random answer
-const index = 3;
+const index = getRandomIndex(pokemonList);
 // store answer
 const answer = pokemonList[index].name;
 
