@@ -18,6 +18,7 @@ const index = getRandomIndex(pokemonList);
 // store answer
 const answer = pokemonList[index].name;
 
+// store div with id of app
 const divApp = document.querySelector("#app");
 displayRandomImg(divApp, pokemonList, index);
 const img = document.querySelector("img");
@@ -55,9 +56,7 @@ function checkAnswer (userGuess, answer){
 
 // display random image
 function displayRandomImg (element, arr, index){
-
     const img = document.createElement("img");
-    
     
     img.setAttribute("src", arr[index].imgSrc);
     
