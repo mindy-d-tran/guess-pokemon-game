@@ -26,36 +26,44 @@ const answer = pokemonList[index].name;
 
 // store div with id of app
 const divApp = document.querySelector("#app");
+
 displayH1(divApp);
 displayRandomImg(divApp, pokemonList, index);
-// const img = document.querySelector("img");
+
+const img = document.querySelector("img");
 
 // amount of tries a user have to guess
 let guessesLeft = 5;
 
 // store user's guess
-let userGuess = window.prompt(
-  `Who's that Pokemon? You have ${guessesLeft} tries left`
-);
-// amount of tries user have
+let userGuess = "";
 
-if (guessesLeft === 0) {
-  window.alert("You lost :(");
-} else {
-  while (guessesLeft !== 0) {
+setTimeout(() => {
+  userGuess = window.prompt(
+    `Who's that Pokemon? You have ${guessesLeft} tries left`
+  );
+
+  while (guessesLeft >= 0) {
     if (checkAnswer(userGuess, answer)) {
       window.alert("Correct");
       break;
+    } else {
+      if (guessesLeft === 0) {
+        window.alert("you lost :(");
+        break;
+      } else {
+        guessesLeft--;
+      }
     }
-    guessesLeft--;
     userGuess = window.prompt(`Try again, you have ${guessesLeft} tries left.`);
   }
-}
+}, 1000);
+
+
 
 // console.log(img);
 
 // img.style.filter = "blur(4px)";
-
 
 // check if user is correct
 function checkAnswer(userGuess, answer) {
