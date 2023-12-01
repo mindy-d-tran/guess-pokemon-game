@@ -52,7 +52,7 @@ setTimeout(() => {
     guessesLeft--;
     userGuess = window.prompt(`Try again, you have ${guessesLeft} tries left.`);
   }
-}, 1000);
+}, 500);
 
 // check if user is correct
 function checkAnswer(userGuess, answer) {
