@@ -1,5 +1,4 @@
-let userGuess = window.prompt("Who's that Pokemon?");
-
+// array of answer bank
 const pokemonList = [
     {
         name: "pikachu",
@@ -14,9 +13,15 @@ const pokemonList = [
         imgSrc: 'https://www.pcinvasion.com/wp-content/uploads/2023/01/pokemon-scarlet-violet-evolve-voltorb-into-electrode-result.jpg?fit=1200%2C675'
     }
 ]
+// store index of random answer
 const index = getRandomIndex(pokemonList);
-
+// store answer
 const answer = pokemonList[index].name;
+
+// store user's guess
+let userGuess = window.prompt("Who's that Pokemon?");
+
+
 const divApp = document.querySelector("#app");
 displayRandomImg(divApp, pokemonList, index);
 const img = document.querySelector("img");
@@ -29,6 +34,8 @@ checkAnswer (userGuess, answer);
 
 // img.style.filter = "blur(4px)";
 
+
+// check if user is correct
 function checkAnswer (userGuess, answer){
     if(userGuess.toLowerCase() === answer) {
         return window.alert("Correct");
@@ -37,6 +44,7 @@ function checkAnswer (userGuess, answer){
     }
 }
 
+// display random image
 function displayRandomImg (element, arr, index){
 
     const img = document.createElement("img");
@@ -47,6 +55,7 @@ function displayRandomImg (element, arr, index){
     element.appendChild(img);
 }
 
+//get random index from array
 function getRandomIndex(arr){
     return Math.floor(Math.random() * arr.length);
 }
