@@ -18,18 +18,27 @@ const index = getRandomIndex(pokemonList);
 // store answer
 const answer = pokemonList[index].name;
 
-// store user's guess
-let userGuess = window.prompt("Who's that Pokemon?");
-
-
 const divApp = document.querySelector("#app");
 displayRandomImg(divApp, pokemonList, index);
 const img = document.querySelector("img");
 
-// let isUserCorrect = false;
+// amount of tries a user have to guess
+let guessesLeft = 5;
 
-// while(isUserCorrect)
-checkAnswer (userGuess, answer);
+// store user's guess
+let userGuess = window.prompt(`Who's that Pokemon? You have ${guessesLeft} tries left`);
+// amount of tries user have
+
+
+while(guessesLeft !== 0){
+    if(checkAnswer (userGuess, answer)) {
+        window.alert("Correct");
+        break;
+    }
+    guessesLeft--;
+    userGuess = window.prompt(`Who's that Pokemon? You have ${guessesLeft} tries left`);
+}
+
 // console.log(img);
 
 // img.style.filter = "blur(4px)";
@@ -38,9 +47,9 @@ checkAnswer (userGuess, answer);
 // check if user is correct
 function checkAnswer (userGuess, answer){
     if(userGuess.toLowerCase() === answer) {
-        return window.alert("Correct");
+        return true;
     } else {
-        return window.alert("Wrong");
+        return false;
     }
 }
 
