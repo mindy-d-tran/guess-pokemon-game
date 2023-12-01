@@ -18,9 +18,13 @@ const pokemonList = [
     imgSrc:
       "https://www.pcinvasion.com/wp-content/uploads/2023/01/pokemon-scarlet-violet-evolve-voltorb-into-electrode-result.jpg?fit=1200%2C675",
   },
+  {
+    name: "eevee",
+    imgSrc: "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_2.0/c_scale,w_400/ncom/software/switch/70010000000450/e8e1f203fc2d8ead2c7542e78e97675a01c0291180a7b8e1afe0d1488b05ada9"
+  }
 ];
 // store index of random answer
-const index = getRandomIndex(pokemonList);
+const index = 3;
 // store answer
 const answer = pokemonList[index].name;
 
