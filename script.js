@@ -5,7 +5,7 @@ const pokemonList = [
         imgSrc: 'https://cdn.vox-cdn.com/thumbor/PqAwdNpc7p-5GUCSMxQPehSU-ck=/0x0:1920x1200/1200x800/filters:focal(810x375:1116x681)/cdn.vox-cdn.com/uploads/chorus_image/image/72524797/pikachu_artwork.0.jpg'
     },
     {
-        name: "eevee",
+        name: "togepi",
         imgSrc: 'https://facts.net/wp-content/uploads/2023/07/16-facts-about-togepi-1689384445.jpg'
     },
     {
