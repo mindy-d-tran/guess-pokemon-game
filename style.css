@@ -30,4 +30,11 @@ body {
     border-color: #09507c;
     background-color: #deedf2;
   }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
