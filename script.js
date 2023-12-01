@@ -46,7 +46,7 @@ setTimeout(() => {
   while (guessesLeft > 0) {
     if (checkAnswer(userGuess, answer)) {
       window.alert("Correct");
-      img.style.filter = "blur(0px)"
+      img.style.filter = "blur(0px)";
       break;
     }
     guessesLeft--;
@@ -65,13 +65,20 @@ function checkAnswer(userGuess, answer) {
 
 // display random image
 function displayRandomImg(element, arr, index) {
+    // create new div
+  const div = document.createElement("div");
+  // set the class to img-container so it can get styled
+  div.setAttribute("class", "img-container");
   // create a new img tag
   const img = document.createElement("img");
   // make the img tag have an attribute src and make the src equals to the image source provided in the array
   img.setAttribute("src", arr[index].imgSrc);
-  img.style.filter ="blur(100px)";
-  // add the img tag inside the element that you pass through
-  element.appendChild(img);
+  // make the image blurry
+  img.style.filter = "blur(100px)";
+  // append img to div
+  div.appendChild(img);
+  // add the div tag inside the element that you pass through
+  element.appendChild(div);
 }
 
 function displayH1(element) {
