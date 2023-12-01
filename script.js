@@ -56,10 +56,11 @@ function checkAnswer (userGuess, answer){
 
 // display random image
 function displayRandomImg (element, arr, index){
+    // create a new img tag
     const img = document.createElement("img");
-    
+    // make the img tag have an attribute src and make the src equals to the image source provided in the array
     img.setAttribute("src", arr[index].imgSrc);
-    
+    // add the img tag inside the element that you pass through
     element.appendChild(img);
 }
 
