@@ -43,27 +43,16 @@ setTimeout(() => {
     `Who's that Pokemon? You have ${guessesLeft} tries left`
   );
 
-  while (guessesLeft >= 0) {
+  while (guessesLeft > 0) {
     if (checkAnswer(userGuess, answer)) {
       window.alert("Correct");
+      img.style.filter = "blur(0px)"
       break;
-    } else {
-      if (guessesLeft === 0) {
-        window.alert("you lost :(");
-        break;
-      } else {
-        guessesLeft--;
-      }
     }
+    guessesLeft--;
     userGuess = window.prompt(`Try again, you have ${guessesLeft} tries left.`);
   }
 }, 1000);
-
-
-
-// console.log(img);
-
-// img.style.filter = "blur(4px)";
 
 // check if user is correct
 function checkAnswer(userGuess, answer) {
@@ -80,6 +69,7 @@ function displayRandomImg(element, arr, index) {
   const img = document.createElement("img");
   // make the img tag have an attribute src and make the src equals to the image source provided in the array
   img.setAttribute("src", arr[index].imgSrc);
+  img.style.filter ="blur(100px)";
   // add the img tag inside the element that you pass through
   element.appendChild(img);
 }
