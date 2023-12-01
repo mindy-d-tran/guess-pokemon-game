@@ -65,5 +65,10 @@ function displayRandomImg (element, arr, index){
 
 //get random index from array
 function getRandomIndex(arr){
+    /*Use Math.random() to generate random number (returns a float, aka a number with decimal points)
+    * Multiply Math.random() by array's length to pick a number from 0 to array's length-1 (still a float)
+    * Use Math.floor to round it to the nearest whole number
+    * Return that number so we can access a random element in the array.
+    */
     return Math.floor(Math.random() * arr.length);
 }
