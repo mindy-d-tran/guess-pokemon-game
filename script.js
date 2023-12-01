@@ -29,6 +29,7 @@ const divApp = document.querySelector("#app");
 
 displayH1(divApp);
 displayRandomImg(divApp, pokemonList, index);
+displayReplayBtn(divApp);
 
 const img = document.querySelector("img");
 
@@ -63,9 +64,22 @@ function checkAnswer(userGuess, answer) {
   }
 }
 
+// display replay button
+function displayReplayBtn (element) {
+    // create new button tag
+    const btn = document.createElement("button");
+    // add text in button tag
+    btn.textContent = "Play Again";
+    // add attribute to button to refresh page 
+    // code from https://www.freecodecamp.org/news/javascript-refresh-page-how-to-reload-a-page-in-js/
+    btn.setAttribute("onclick", "location.reload()");
+    // add button inside the element you passed
+    element.appendChild(btn);
+}
+
 // display random image
 function displayRandomImg(element, arr, index) {
-    // create new div
+  // create new div
   const div = document.createElement("div");
   // set the class to img-container so it can get styled
   div.setAttribute("class", "img-container");
